@@ -33,24 +33,27 @@ public class BasicCrawlController {
   private static final Logger logger = LoggerFactory.getLogger(BasicCrawlController.class);
 
   public static void main(String[] args) throws Exception {
-    if (args.length != 2) {
-      logger.info("Needed parameters: ");
-      logger.info("\t rootFolder (it will contain intermediate crawl data)");
-      logger.info("\t numberOfCralwers (number of concurrent threads)");
-      return;
-    }
+//    args = new String[]{"",""} ;
+//    if (args.length != 2) {
+//      logger.info("Needed parameters: ");
+//      logger.info("\t rootFolder (it will contain intermediate crawl data)");
+//      logger.info("\t numberOfCralwers (number of concurrent threads)");
+//      return;
+//    }
 
     /*
      * crawlStorageFolder is a folder where intermediate crawl data is
      * stored.
      */
-    String crawlStorageFolder = args[0];
+//    String crawlStorageFolder = args[0];
+    String crawlStorageFolder = "D:/crawl";
 
     /*
      * numberOfCrawlers shows the number of concurrent threads that should
      * be initiated for crawling.
      */
-    int numberOfCrawlers = Integer.parseInt(args[1]);
+//    int numberOfCrawlers = Integer.parseInt(args[1]);
+    int numberOfCrawlers = 2;
 
     CrawlConfig config = new CrawlConfig();
 
@@ -111,9 +114,9 @@ public class BasicCrawlController {
      * URLs that are fetched and then the crawler starts following links
      * which are found in these pages
      */
-    controller.addSeed("http://www.ics.uci.edu/");
-    controller.addSeed("http://www.ics.uci.edu/~lopes/");
-    controller.addSeed("http://www.ics.uci.edu/~welling/");
+    controller.addSeed("http://jandan.net/");
+//    controller.addSeed("http://www.ics.uci.edu/~lopes/");
+//    controller.addSeed("http://www.ics.uci.edu/~welling/");
 
     /*
      * Start the crawl. This is a blocking operation, meaning that your code

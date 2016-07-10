@@ -33,6 +33,7 @@ public class ImageCrawlController {
   private static final Logger logger = LoggerFactory.getLogger(ImageCrawlController.class);
 
   public static void main(String[] args) throws Exception {
+    args = new String[]{"D:/crawl","1","D:/crawl/image"} ;
     if (args.length < 3) {
       logger.info("Needed parameters: ");
       logger.info("\t rootFolder (it will contain intermediate crawl data)");
@@ -55,7 +56,7 @@ public class ImageCrawlController {
      */
     config.setIncludeBinaryContentInCrawling(true);
 
-    String[] crawlDomains = {"http://uci.edu/"};
+    String[] crawlDomains = {"http://pic.yesky.com/c/6_22231.shtml"};
 
     PageFetcher pageFetcher = new PageFetcher(config);
     RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
